@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 
-/* Color manage  */
-
 :root {
 
     --dark: rgba(42, 42, 46, 1);
@@ -27,6 +25,7 @@ body {
 }
 
 
+/* Color manage  */
 
 
 /* Navigation  */
@@ -46,10 +45,11 @@ nav.navbar ul li a
     transition: 0.3s;
 }
 
-nav.navbar ul li a:hover
+nav.navbar ul li a:hover, nav.navbar ul li .dropdown:hover, nav.navbar ul li .dropbtn
 {
     color: var(--gray);
     transition: 0.5s;
+    
 }
 
 nav.navbar ul li 
@@ -61,9 +61,49 @@ nav.navbar ul li
 
 nav.navbar ul li.navbar-right 
 {
-    float:right;
+    float: right;
     margin-right: 15px;
 }
+
+.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px;
+    margin-right: 7px;
+    border: none;
+    color: white;
+  }
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    color: var(--gray);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 
 /* Footer  */
@@ -98,8 +138,6 @@ footer.minified-footer .footer-center
     grid-column: 2;
 
 }
-
-
 /* Other */
 
 h1.title-decoration, h2.title-decoration, h3.title-decoration, h4.title-decoration
