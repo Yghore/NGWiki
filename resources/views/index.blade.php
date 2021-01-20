@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'BONSOIR')
+@section('title', 'NGWiki - Accueil')
 
 @section('content')
 <div class="row" style="font-size: 20px;">
 	<h1 class="title-decoration">NGWiki - Présentation</h1>
-  	<p>Bonjour jeune joueur de NationsGlory ! tu te demandes peut être pourquoi se site a été crée ?
+  	<p>Bonjour jeune joueur de NationsGlory ! Tu te demandes peut être pourquoi se site a été crée ?
 	Tout simplement parce que je trouve le wiki officiel pas assez poussé :D, c'est pour cela que j'ai crée
 	<strong>NGWiki</strong> un wiki <strong>Non Officiel</strong> & <strong>OpenSource</strong>
 	 </p>

@@ -112,13 +112,12 @@ footer.minified-footer
 {
     background-color: var(--dark);
     color: white;
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     text-align: center;
     min-height: 15px;
-    position: fixed;
     bottom: 0px;
 }
 
@@ -143,6 +142,71 @@ footer.minified-footer .footer-center
 h1.title-decoration, h2.title-decoration, h3.title-decoration, h4.title-decoration
 {
     border-bottom: 1px solid;
+}
+
+/* BreadCrumb */
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: var(--dark);
+    border-radius: 3px;
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: white;
+    content: "/\00a0";
+  }
+  ul.breadcrumb li a {
+    color: white;
+    text-decoration: none;
+  }
+  ul.breadcrumb li a:hover {
+    color: rgb(172, 165, 165);
+    transition: 0.4s;
+  }
+
+
+/* CARD */
+
+div.card 
+{
+    display: inline-block;
+    box-shadow: 0px 10px 34px -18px rgba(0,0,0,0.75);
+    background-color: var(--dark);
+    margin: 10px;
+    padding: 10px 10px 5px 10px;
+    max-width: calc(33.33% - 50px);
+    text-align: center;
+}
+/* #Larger than mobile  */
+@media screen and (max-width: 700 px)
+{
+    div.card 
+    {
+        max-width: calc(100% - 50px);
+    }
+
+
+}
+
+div.card-header img.card-logo 
+{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+    top: 45px;
+}
+div.card .card-footer 
+{
+    font-size: small;
+    margin-top: 5px;
 }
 
 
