@@ -22,7 +22,14 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--gray-dark);
     color: white;
+
 }
+
+.container 
+{
+  min-height: calc(100vh - 145px);
+}
+
 
 
 /* Color manage  */
@@ -35,6 +42,7 @@ nav.navbar
     background-color: var(--dark);
     font-size: 1.1em;
 }
+
 
 
 
@@ -110,6 +118,7 @@ nav.navbar ul li.navbar-right
 
 footer.minified-footer
 {
+    position: absolute;
     background-color: var(--dark);
     color: white;
     width: calc(100% - 20px);
@@ -117,9 +126,9 @@ footer.minified-footer
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     text-align: center;
-    min-height: 15px;
-    bottom: 0px;
+    height: 50px;
 }
+
 
 footer.minified-footer .footer-right 
 {
@@ -139,9 +148,18 @@ footer.minified-footer .footer-center
 }
 /* Other */
 
+.d-none 
+{
+  display: none;
+}
+
 h1.title-decoration, h2.title-decoration, h3.title-decoration, h4.title-decoration
 {
     border-bottom: 1px solid;
+}
+
+.title {
+  text-align: center;
 }
 
 /* BreadCrumb */
@@ -207,6 +225,11 @@ div.card .card-footer
 {
     font-size: small;
     margin-top: 5px;
+}
+
+form input {
+  color: black;
+  font-size: 16px;
 }
 
 

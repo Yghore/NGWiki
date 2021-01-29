@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row" style="font-size: 20px;">
-    <h1 class="title-decoration">Catégorie : Galaticraft</h1>
+    <h1 class="title-decoration">Listes des catégories</h1>
     <div class="card">
         <div class="card-header">
             <img src="https://image.flaticon.com/icons/png/128/124/124570.png" alt="" class="card-logo">

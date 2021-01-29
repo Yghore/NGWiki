@@ -7,12 +7,15 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skeleton.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">   
+    <script src="https://cdn.tiny.cloud/1/7lyjv76uy8ci9kacnftg4kf8eanj5ua8t06bnlt99cwpx4z2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     @stack('head')
 </head>
 <body>
         
-    @include('layouts.navbar')
+    <nav>
+
+    </nav>
 
     <div class="container">
         @yield('content')

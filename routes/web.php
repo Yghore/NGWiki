@@ -25,3 +25,14 @@ Route::get('category', function () {
     return view('category');
 });
 
+
+Route::get('login', function () {
+    return view('login');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    });
+    Route::post('test', 'AdminController@test');
+});
