@@ -5,8 +5,8 @@
 
 :root {
 
-    --dark: rgba(42, 42, 46, 1);
-    --gray-dark: rgb(51, 51, 55);
+    --dark: #2a2a2e;
+    --gray-dark: #333337;
     --green: #A0D468;
     --dark-green: #8CC152;
     --red: #E9573F;
