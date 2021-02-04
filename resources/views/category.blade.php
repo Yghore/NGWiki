@@ -15,7 +15,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -28,7 +28,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -41,7 +41,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -54,7 +54,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -67,7 +67,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -80,7 +80,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -93,7 +93,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">
@@ -106,7 +106,7 @@
         </div>
         <div class="card-footer">
             <p>Crée le 10/10/10</p>
-            <button class="button-primary">Lire la suite</button>
+            <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
         </div>
     </div>
     <div class="card">

@@ -15,7 +15,7 @@
 
     --primary-color: #3bafda;
     --warning-color: #f6bb42;
-    --danger-color: #da4453;
+    --danger-color: #d9534f;
 }
 
 body {
@@ -30,7 +30,10 @@ body {
   min-height: calc(100vh - 145px);
 }
 
-
+table.list td
+{
+  padding-left: 8px;
+}
 
 /* Color manage  */
 
@@ -201,6 +204,37 @@ div.card
     max-width: calc(33.33% - 50px);
     text-align: center;
 }
+
+div.card.card-full 
+{
+  max-width: none;
+}
+
+.card-admin div.card 
+{
+  min-width: 200px;
+}
+
+div.card.card-primary 
+{
+  background-color: var(--primary-color);
+}
+
+div.card.card-danger 
+{
+  background-color: var(--danger-color);
+}
+
+div.card.card-warning 
+{
+  background-color: var(--warning-color);
+}
+
+div.card.card-success 
+{
+  background-color: var(--green);
+}
+
 /* #Larger than mobile  */
 @media screen and (max-width: 700 px)
 {
@@ -231,6 +265,7 @@ form input {
   color: black;
   font-size: 16px;
 }
+
 
 
 /* * MEDIA QUERY LIST
