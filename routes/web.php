@@ -15,24 +15,54 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('article', function () {
     return view('article');
-});
+})->name('article');
 
 Route::get('category', function () {
     return view('category');
-});
+})->name('category');
 
 
 Route::get('login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'wiki'], function () {
+        Route::get('/pages/list/', function () {
+            return view('admin.wiki.pages');
+        })->name('admin.pages');
+        Route::get('/pages/sommaire/', function () {
+            return view('admin.wiki.sommaire');
+        })->name('admin.sommaire');
+        Route::get('/pages/edit/', function () {
+            return view('admin.wiki.edit')->with('content', "");
+        })->name('admin.page.edit');
+        
+        Route::get('/modify/', function () {
+            return view('admin.wiki.modify');
+        })->name('admin.modify');
+        Route::get('/modify/view', function () {
+            return view('admin.wiki.view');
+        })->name('admin.modify.view');
+    
+        Route::get('/category', function () {
+            return view('admin.wiki.category');
+        })->name('admin.category');
+    
+        Route::get('/category/edit', function () {
+            return view('admin.wiki.edit_category');
+        })->name('admin.category.edit');
+        
+        
+    });
     Route::get('/', function () {
         return view('admin.dashboard');
     });
-    Route::post('test', 'AdminController@test');
+   
+
+
 });
