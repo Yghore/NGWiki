@@ -17,13 +17,9 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('article', function () {
-    return view('article');
-})->name('article');
+Route::get('article', 'PageController@view')->name('article');
 
-Route::get('category', function () {
-    return view('category');
-})->name('category');
+Route::get('category', 'CategoryController@view')->name('category');
 
 
 Route::get('login', function () {
