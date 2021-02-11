@@ -42,6 +42,10 @@ Route::group(['prefix' => 'admin'], function () {
             return view('admin.wiki.edit')->with('content', "");
         })->name('admin.page.edit');
         
+        Route::get('/pages/add/', function () {
+            return view('admin.wiki.add_page');
+        })->name('admin.page.add');
+
         Route::get('/modify/', function () {
             return view('admin.wiki.modify');
         })->name('admin.modify');
@@ -59,7 +63,19 @@ Route::group(['prefix' => 'admin'], function () {
         
         
     });
-    Route::get('/', function () {
+
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('/list', function () {
+            return view('admin.user.list');
+        })->name('admin.user.list');
+
+
+        Route::get('/edit', function () {
+            return view('admin.user.edit');
+        })->name('admin.user.edit');
+
+    });
+     Route::get('/', function () {
         return view('admin.dashboard');
     });
    
