@@ -12,7 +12,7 @@
         <input class="u-full-width" type="email" placeholder="john.doe@gmail.com" id="email">
         <label for="permission">Permission :</label>
         <ul class="checkbox">
-            <li><input type="checkbox" id="ADMIN_VIEW" value="ADMIN_VIEW"><label for="ADMIN_VIEW">ADMIN_VIEW</label></li>
+            <li><input type="checkbox" id="ADMIN_VIEW" value="ADMIN_VIEW" checked><label for="ADMIN_VIEW">ADMIN_VIEW</label></li>
             <li><input type="checkbox" id="PAGE_EDIT" value="PAGE_EDIT"><label for="PAGE_EDIT">PAGE_EDIT</label></li>
             <li><input type="checkbox" id="CATEGORY_MANAGE" value="CATEGORY_MANAGE"><label for="CATEGORY_MANAGE">CATEGORY_MANAGE</label></li>
             <li><input type="checkbox" id="PAGE_ADD" value="PAGE_ADD"><label for="PAGE_ADD">PAGE_ADD</label></li>
