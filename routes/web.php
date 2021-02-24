@@ -17,13 +17,9 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('article', function () {
-    return view('article');
-})->name('article');
+Route::get('article', 'PageController@view')->name('article');
 
-Route::get('category', function () {
-    return view('category');
-})->name('category');
+Route::get('category', 'CategoryController@view')->name('category');
 
 
 Route::get('login', function () {
@@ -42,6 +38,10 @@ Route::group(['prefix' => 'admin'], function () {
             return view('admin.wiki.edit')->with('content', "");
         })->name('admin.page.edit');
         
+        Route::get('/pages/add/', function () {
+            return view('admin.wiki.add_page');
+        })->name('admin.page.add');
+
         Route::get('/modify/', function () {
             return view('admin.wiki.modify');
         })->name('admin.modify');
@@ -59,7 +59,19 @@ Route::group(['prefix' => 'admin'], function () {
         
         
     });
-    Route::get('/', function () {
+
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('/list', function () {
+            return view('admin.user.list');
+        })->name('admin.user.list');
+
+
+        Route::get('/edit', function () {
+            return view('admin.user.edit');
+        })->name('admin.user.edit');
+
+    });
+     Route::get('/', function () {
         return view('admin.dashboard');
     });
    
