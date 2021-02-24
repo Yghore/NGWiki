@@ -37,7 +37,7 @@
                 <label class="permission">Total : 2046</label>
             </td>
             <td>
-                <a class="button-icon button-success" href="#"><i class="fas fa-pen"></i></a>
+                <a class="button-icon button-success" href="{{ route('admin.user.edit') }}"><i class="fas fa-pen"></i></a>
                 <a class="button-icon button-danger" href="#"><i class="fas fa-skull-crossbones"></i></a>
             </td>
         </tr>
@@ -54,7 +54,7 @@
                 <label class="permission">Total : 30</label>
             </td>
             <td>
-                <a class="button-icon button-success" href="#"><i class="fas fa-pen"></i></a>
+                <a class="button-icon button-success" href="{{ route('admin.user.edit') }}"><i class="fas fa-pen"></i></a>
                 <a class="button-icon button-danger" href="#"><i class="fas fa-skull-crossbones"></i></a>
             </td>
         </tr>
@@ -67,7 +67,7 @@
                 <label class="permission">Total : 0</label>
             </td>
             <td>
-                <a class="button-icon button-success" href="#"><i class="fas fa-pen"></i></a>
+                <a class="button-icon button-success" href="{{ route('admin.user.edit') }}"><i class="fas fa-pen"></i></a>
                 <a class="button-icon button-danger" href="#"><i class="fas fa-skull-crossbones"></i></a>
             </td>
         </tr>

@@ -25,7 +25,7 @@
                 <li><i class="fas fa-check-circle"></i><a href="{{ route('admin.modify') }}">Valider une modification</a></li>
                 <li><i class="fas fa-database"></i><a href="{{ route('admin.category') }}">Gestion des catégories</a></li>
                 <div class="separator">Gestion des utilisateurs</div>
-                <li><i class="fas fa-users"></i><a href="#">Liste des utilisateurs</a></li>
+                <li><i class="fas fa-users"></i><a href="{{ route('admin.user.list') }}">Liste des utilisateurs</a></li>
                 <li><i class="fas fa-user-plus"></i><a href="#">Ajouter un utilisateur</a></li>
                 <div class="separator">Articles</div>
                 <li><i class="fas fa-plus-circle"></i><a href="#">Ajouter un article</a></li>

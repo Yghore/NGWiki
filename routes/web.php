@@ -26,6 +26,13 @@ Route::get('login', function () {
     return view('login');
 })->name('login');
 
+
+Route::get('/test', function ($id) {
+    return view('index');
+    })->middleware('permission.manager');
+
+
+
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'wiki'], function () {
         Route::get('/pages/list/', function () {
