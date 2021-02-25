@@ -27,8 +27,8 @@ Route::get('login', function () {
 })->name('login');
 
 
-Route::get('/test', function ($id) {
-    return view('index');
+Route::get('/test', function () {
+    return view('test');
     })->middleware('permission.manager');
 
 
