@@ -7,24 +7,31 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Exceptions\PermissionException;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
 
-    public function isPermission(int $requestPermission)
+    public function isPermission($requestPermission)
     {
-            
-
-                $userPermissions = User::getPermissionsForUser();
-                if(in_array($requestPermission, $userPermissions)){
-                    return true;
-                }
+        $permissions = Config::get('permissions');
+        if(!is_int($requestPermission))
+        {
+            $requestPermission = array_search($requestPermission, array_filter(array_combine(array_keys($permissions), array_column($permissions, 'title'))));            if(!$requestPermission)
+            { 
+                throw new PermissionException("InvalidTitlePermission"); 
                 return false;
-        
-        
-        
+            }
+
+        }
+        $userPermissions = User::getPermissionsForUser();
+        if(in_array($requestPermission, $userPermissions)){
+            return true;
+        }
+        return false;
+
     }
 
     public function getPermissionsForUser()
