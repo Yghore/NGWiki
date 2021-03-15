@@ -174,3 +174,8 @@ opacity: 0;
 ul.checkbox li input[type="checkbox"]:focus + label {
 border: 2px solid #e9a1ff;
 }
+
+.label-permission 
+{
+  margin-bottom: 0px;
+}

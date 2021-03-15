@@ -16,11 +16,14 @@
             </div>
             <div class="card-footer">
                 <p>Crée le {{ $category->created_at }}</p>
-                <a class="button button-primary" href="{{ route('article') }}">Lire la suite</a>
+                <a class="button button-primary" href="{{ route('article', Str::slug($category->id . ' ' .$category->title, '-')) }}">Lire la suite</a>
             </div>
         </div>
     @empty
-        <p>Il n'y a aucune catégories disponible</p>
+    <div style="text-align: center;">
+        <h1>Aucune catégorie disponible ...</h1>
+        <p class="muted">Vous souhaitez aider à remplir le wiki ? <a href="#">clique ici !</a></p>
+    </div>
     @endforelse
     
 </div>

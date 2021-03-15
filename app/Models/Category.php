@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    public static function getCategories()
+    {
+        $categories = Category::all();
+        if(!empty($categories))
+        {
+            return $categories;
+        }
+        return [];
+    }
+
 }

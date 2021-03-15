@@ -16,19 +16,20 @@ class PermissionsManager
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, string $permission)
     {
-        $user = Auth::loginUsingId(1);
+        $user = Auth::user();
         if(!empty($user))
         {
-
-            $permissions = Auth::user()->isPermission(4);
+        
+            $permissions = Auth::user()->isPermission($permission);
             if(!$permissions)
             {
-                abort(404);
+                abort(403);
             }
             return $next($request);
         }
+        abort(403);
         
     }
 
