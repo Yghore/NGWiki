@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Page;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -25,4 +26,5 @@ class PageController extends Controller
         ->with('articles', $articles);
     }
 
+ 
 }

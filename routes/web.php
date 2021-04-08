@@ -55,7 +55,7 @@ Route::middleware(['permission.manager:ADMIN_VIEW'])->group(function () {
                 return view('admin.wiki.edit')->with('content', "");
             })->name('admin.page.edit')->middleware(['permission.manager:PAGE_EDIT']);
 
-
+            Route::post('/pages/add', 'Admin\PageController@addPage')->name('admin.page.add');
             
             Route::get('/pages/add/', 'Admin\PageController@view')->name('admin.page.add')->middleware(['permission.manager:PAGE_ADD']);
 

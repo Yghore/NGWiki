@@ -8,9 +8,9 @@
 <div>
     <h1 class="title">Ajouter une page </h1>
 <div style="margin: 10px;"></div>
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('admin.page.add') }}">
         @csrf
-        <label for="title">Titre de l'article</label>
+        <label for="category">Catégorie de la page</label>
         <select name="category" id="category" style="color: black; width: 100%">
             @forelse ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
@@ -18,7 +18,10 @@
                 <option value="0" select disabled>Aucune catégorie</option>
             @endforelse
         </select>
-        <input class="u-full-width" type="text" placeholder="Nom de l'article" id="title">
+        <label for="title">Titre de l'article</label>
+        <input class="u-full-width" type="text" placeholder="Nom de l'article" id="title" name="title">
+        <label for="desc">Description de l'article</label>
+        <input type="text" id="desc" class="u-full-width" placeholder="Courte description de la page" name="desc">
         <label for="editor">Page de l'article</label>
         <textarea id="editor" name="editor" style="margin: 10px;"></textarea>
         <input type="submit" class="btn" value="Envoyer">
