@@ -16,6 +16,8 @@ class AdminController extends Controller
         return view('admin.wiki.edit')->with('content', $content);
     }
 
+    
+
 }
 
 // <span style="background-color: rgba(110, 158, 110, 0.39);"></span>

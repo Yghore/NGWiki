@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 class PermissionsManager
 {
@@ -15,13 +16,21 @@ class PermissionsManager
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, string $permission)
     {
-        $user = Auth::loginUsingId(1);
-        $permissions = Auth::user()->isPermission();
+        $user = Auth::user();
+        if(!empty($user))
+        {
         
-        dd($permissions[2]['title']);
-        return $next($request);
+            $permissions = Auth::user()->isPermission($permission);
+            if(!$permissions)
+            {
+                abort(403);
+            }
+            return $next($request);
+        }
+        abort(403);
+        
     }
 
 }

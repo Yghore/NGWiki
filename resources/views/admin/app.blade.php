@@ -21,7 +21,7 @@
                 
                 <div class="separator">Wiki</div>
                 <li><i class="fas fa-newspaper"></i><a href="{{ route('admin.pages') }}">Liste des pages</a></li>
-                <li><i class="fas fa-plus-circle"></i><a href="{{ route('admin.page.edit') }}">Ajouter une pages</a></li>
+                <li><i class="fas fa-plus-circle"></i><a href="{{ route('admin.page.add') }}">Ajouter une pages</a></li>
                 <li><i class="fas fa-check-circle"></i><a href="{{ route('admin.modify') }}">Valider une modification</a></li>
                 <li><i class="fas fa-database"></i><a href="{{ route('admin.category') }}">Gestion des catégories</a></li>
                 <div class="separator">Gestion des utilisateurs</div>

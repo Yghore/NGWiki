@@ -295,19 +295,34 @@ SVG Icons - svgicons.sparkk.fr
 
 .svg-icon path,
 .svg-icon polygon,
-.svg-icon rect {
+.svg-icon rect 
+{
   fill: white;
 }
 
+
 .svg-icon path:hover,
 .svg-icon polygon:hover,
-.svg-icon rect:hover {
+.svg-icon rect:hover
 {
   fill: red;
 }
 
 .svg-icon circle {
   stroke: white;
+}
+
+.alert 
+{
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  color: black
+}
+
+.alert-danger 
+{
+  background-color: var(--red);
 }
 
 /* * MEDIA QUERY LIST
