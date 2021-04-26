@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Exceptions\PermissionException;
 
+use function Psy\debug;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -39,22 +41,28 @@ class User extends Authenticatable
         $permissions = Config::get('permissions');
         $userPermissions = [];
         $r = $this->permission;
-        while($r != 0){
-            for ($i = count($permissions); $i > 0 ; $i--) { 
-                $perm = 2 ** $i;
-                if($perm <= $r)
-                {
-                    $r = $r - $perm;
-                    array_push($userPermissions, $perm);
-                    break;
+        if($r >= 2){
+            while($r != 0){
+                for ($i = count($permissions); $i > 0 ; $i--) { 
+                    $perm = 2 ** $i;
+                    if($perm <= $r)
+                    {
+                        $r = $r - $perm;
+                        array_push($userPermissions, $perm);
+                        break;
+                    }
+
                 }
 
             }
-
+            return $userPermissions;
         }
-        return $userPermissions;
+        throw new PermissionException("InvalidPermissionError"); 
+        return false;
     }
 
+
+    
         
     // Autre Exemple
     // 2 + 4 + 64 = 70

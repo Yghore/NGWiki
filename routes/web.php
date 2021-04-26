@@ -22,17 +22,14 @@ Route::get('article/{slug}', 'PageController@view')->name('article');
 
 Route::get('category', 'CategoryController@view')->name('category');
 
-Route::get('test', function () {
-    return view('test');
-});
 
 Route::get('login', 'LoginController@view')->name('login.view');
 Route::post('login', 'LoginController@authenticate')->name('login.authenticate');
 
 
-// Route::get('/test', function () {
-//     return view('test');
-//     })->middleware('permission.manager:ADMIN_VIEW');
+Route::get('/test', function () {
+    return view('test');
+    })->middleware('permission.manager:ADMIN_VIEW');
 
 
 Route::middleware(['permission.manager:ADMIN_VIEW'])->group(function () {
@@ -84,6 +81,16 @@ Route::middleware(['permission.manager:ADMIN_VIEW'])->group(function () {
 
             
             
+        });
+
+
+        Route::group(['prefix' => 'image', 'middleware' => 'permission.manager:ADMIN_VIEW'], function () {
+            
+            Route::get('add', 'Admin\ImageController@view')->name('admin.image.add');
+            Route::get('list', 'Admin\ImageController@list')->name('admin.image.list');
+            Route::post('add', 'Admin\ImageController@addImage')->name('admin.image.add');
+
+
         });
 
         Route::group(['prefix' => 'user'], function () {

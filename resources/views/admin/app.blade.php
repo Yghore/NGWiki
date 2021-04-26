@@ -19,14 +19,34 @@
             <ul>
                 <li><i class="fas fa-igloo"></i><a href="{{ route('home') }}">Accueil</a></li>
                 
-                <div class="separator">Wiki</div>
-                <li><i class="fas fa-newspaper"></i><a href="{{ route('admin.pages') }}">Liste des pages</a></li>
-                <li><i class="fas fa-plus-circle"></i><a href="{{ route('admin.page.add') }}">Ajouter une pages</a></li>
-                <li><i class="fas fa-check-circle"></i><a href="{{ route('admin.modify') }}">Valider une modification</a></li>
-                <li><i class="fas fa-database"></i><a href="{{ route('admin.category') }}">Gestion des catégories</a></li>
-                <div class="separator">Gestion des utilisateurs</div>
-                <li><i class="fas fa-users"></i><a href="{{ route('admin.user.list') }}">Liste des utilisateurs</a></li>
-                <li><i class="fas fa-user-plus"></i><a href="#">Ajouter un utilisateur</a></li>
+                @if (Auth::user()->isPermission("PAGE_EDIT") || Auth::user()->isPermission("PAGE_ADD"))
+                    <div class="separator">Wiki</div>
+                @endif
+                @if (Auth::user()->isPermission("PAGE_EDIT"))
+                    <li><i class="fas fa-newspaper"></i><a href="{{ route('admin.pages') }}">Liste des pages</a></li>
+                    <li><i class="fas fa-check-circle"></i><a href="{{ route('admin.modify') }}">Valider une modification</a></li>
+                @endif
+                @if (Auth::user()->isPermission("PAGE_ADD"))
+                    <li><i class="fas fa-plus-circle"></i><a href="{{ route('admin.page.add') }}">Ajouter une pages</a></li>
+
+
+                @endif
+
+                @if (Auth::user()->isPermission("CATEGORY_MANAGE"))
+                    <li><i class="fas fa-database"></i><a href="{{ route('admin.category') }}">Gestion des catégories</a></li>
+                @endif
+                @if (Auth::user()->isPermission("USER_VIEW"))
+                    <div class="separator">Gestion des utilisateurs</div>
+                    <li><i class="fas fa-users"></i><a href="{{ route('admin.user.list') }}">Liste des utilisateurs</a></li>
+                @endif                
+                @if (Auth::user()->isPermission("USER_ADD"))
+                    <li><i class="fas fa-user-plus"></i><a href="#">Ajouter un utilisateur</a></li>
+                @endif          
+                
+                <div class="separator">Images</div>
+                <li><i class="fas fa-images"></i><a href="{{ route('admin.image.add') }}">Ajouter une image</a></li>
+                <li><i class="fas fa-images"></i><a href="{{ route('admin.image.list') }}">Liste des images</a></li>
+
                 <div class="separator">Articles</div>
                 <li><i class="fas fa-plus-circle"></i><a href="#">Ajouter un article</a></li>
                 <li><i class="fas fa-newspaper"></i><a href="#">Liste des articles</a></li>

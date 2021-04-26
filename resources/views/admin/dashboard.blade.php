@@ -2,10 +2,6 @@
 
 @section('title', 'NGWiki - Dashboard')
 
-@push('head')
-
-
-@endpush
 
 
 @section('content')
