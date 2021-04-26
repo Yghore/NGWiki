@@ -13,9 +13,9 @@ class PageController extends Controller
     public function view()
     {
         $categories = Category::getCategories(); 
-        
+        $img_list = ImageController::arrayImages();
         return view('admin.wiki.add_page')
-        ->with('categories', $categories);
+        ->with(['categories' => $categories, 'img_list' => $img_list]);
     }
 
     public function addPage(Request $request)

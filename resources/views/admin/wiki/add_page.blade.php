@@ -2,6 +2,20 @@
 
 @section('title', 'NGWiki - Dashboard')
 
+@push('js')
+   
+<script>
+    let previewImg = document.getElementById('preview');
+    let basePath = "{{ resource_path('storage/') }}";
+    let input = document.getElementById('icon');
+    input.addEventListener('change', function()
+    {
+        console.log(basePath + input.value);
+        previewImg.src = basePath + input.value;
+    });
+</script> 
+@endpush
+
 
 @section('content')
 
@@ -18,6 +32,17 @@
                 <option value="0" select disabled>Aucune catégorie</option>
             @endforelse
         </select>
+        <label for="icon">Icon de la page</label>
+        <select name="icon" id="icon" style="color: black; width: 100%">
+            @forelse ($img_list as $img)
+                <option value="{{ $img }}">{{ $img}}</option>
+            @empty
+                <option value="nothing" select disabled>Aucune image</option>
+            @endforelse
+        </select>
+        <div>
+            <img id="preview" src="" alt="">
+        </div>
         <label for="title">Titre de l'article</label>
         <input class="u-full-width" type="text" placeholder="Nom de l'article" id="title" name="title">
         <label for="desc">Description de l'article</label>
