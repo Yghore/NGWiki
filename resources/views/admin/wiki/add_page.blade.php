@@ -6,7 +6,7 @@
    
 <script>
     let previewImg = document.getElementById('preview');
-    let basePath = "{{ resource_path('storage/') }}";
+    let basePath = "{{ asset('storage/') }}";
     let input = document.getElementById('icon');
     input.addEventListener('change', function()
     {
